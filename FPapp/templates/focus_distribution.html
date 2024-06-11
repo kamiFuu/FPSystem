@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus Points Distribution</title>
+</head>
+<body>
+    <h1>Focus Points Distribution with Predicted Focus Loss</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Xem Biểu Đồ</button>
+    </form>
+    {% if lecture_images %}
+        <h2>Kết quả:</h2>
+        {% for image in lecture_images %}
+            <img src="/static/lectures/{{ image }}" alt="{{ image }}">
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #6C757D;
+}
+
+form {
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #4D4D4D;
+}
+
+select, input, textarea {
+    width: calc(50% - 12px);
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #6C757D;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #333333;
+    font-size: 1em;
+}
+
+.time-input {
+    width: calc(25% - 12px);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-section {
+    width: 57%;
+}
+.right-section {
+    width: 40%;
+}
+.separator {
+    width: 1%;
+    background-color: #F1F1F1;
+}
+
+.students {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
+
+.student-grid button {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #6C757D;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #6C757D;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1em;
+}
+
+.student-grid button:hover {
+    background-color: #007BFF;
+    color: #FFFFFF;
+}
+
+.additional-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

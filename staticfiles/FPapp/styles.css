@@ -1,0 +1,50 @@
+/* FPapp/static/FPapp/styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+form {
+    margin: 20px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+select {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.container {
+    display: flex; /* Sử dụng flexbox để xếp các phần tử bên trong theo chiều ngang */
+    flex-direction: row; /* Xếp các phần tử theo chiều ngang */
+}
+
+.additional-content {
+    display: flex; /* Sử dụng flexbox để xếp các phần tử bên trong theo chiều ngang */
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+}
+
+.additional-content > div {
+    margin-right: 20px; /* Khoảng cách giữa các phần tử */
+}
+.students {
+    display: flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+    gap: 20px; /* Khoảng cách giữa các button */
+    justify-content: center; /* Canh giữa các button */
+}
+.students button {
+    padding: 20px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.students button:hover {
+    background-color: #e0e0e0;
+}
+

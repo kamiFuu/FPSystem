@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clicker</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'FPapp/styles.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'FPapp/clicker.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" onchange="fetchLectures(this.value)">
+                        <option value="">Select Course</option>
+                        {% for course in courses %}
+                            <option value="{{ course.id }}">{{ course.course_name }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <label for="lecture">Lecture:</label>
+                    <select id="lecture" name="lecture">
+                        <option value="">Select Lecture</option>
+                    </select>
+                </div>
+
+                <div class="students">
+                    <h2>Students:</h2>
+                    <div class="student-grid">
+                        {% for student in students %}
+                            <button type="button" onclick="sendClick('{{ student.id }}')">{{ student.name }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="right-section">
+            <div class="lecture-structure">
+                <h2>Lecture Structure</h2>
+                <ul id="instructional-activities-list"></ul>
+                <form onsubmit="event.preventDefault(); addLectureStructure();">
+                    <label for="structure_name">Instructional activities:</label>
+                    <input type="text" id="structure_name" name="structure_name">
+
+                    <label for="materials">Materials:</label>
+                    <input type="text" id="materials" name="materials">
+
+                    <label for="structure_start_time">Start Time:</label>
+                    <input type="time" id="structure_start_time" name="structure_start_time" class="time-input">
+
+                    <label for="structure_end_time">End Time:</label>
+                    <input type="time" id="structure_end_time" name="structure_end_time" class="time-input">
+
+                    <button type="submit">Add Lecture Structure</button>
+                </form>
+            </div>
+
+            <div class="observation">
+                <h2>Observation</h2>
+                <ul id="observations-list"></ul>
+                <form onsubmit="event.preventDefault(); addObservation();">
+                    <label for="observation_text">Observation notes:</label>
+                    <textarea id="observation_text" name="observation_text"></textarea>
+
+                    <label for="observation_start_time">Start Time:</label>
+                    <input type="time" id="observation_start_time" name="observation_start_time" class="time-input">
+
+                    <label for="observation_end_time">End Time:</label>
+                    <input type="time" id="observation_end_time" name="observation_end_time" class="time-input">
+
+                    <button type="submit">Add Observation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
