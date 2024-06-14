@@ -5,7 +5,6 @@ from django.utils.translation import gettext as _ #cho translate
 from django.utils import timezone
 import os
 import pytz
-
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
